@@ -5,6 +5,7 @@ import { GooeyText } from "@/components/ui/gooey-text-morphing";
 import VerticalTabs from "@/components/ui/vertical-tabs";
 import { SplineScene } from "@/components/ui/splite";
 import { CursorDrivenParticleTypography } from "@/components/cursor-driven-particles-typography";
+import { ChangeLog } from "@/components/interactive-changelog-with-dialog";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       </div>
 
       <MarqueeMain />
+      <ChangeLog />
       <VerticalTabs />
 
       <div>

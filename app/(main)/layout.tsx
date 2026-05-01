@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/mini-navbar";
 import Demo from "@/components/demo";
+import {
+  ClerkProvider,
+  Show,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -41,11 +48,11 @@ export default function RootLayout({
       )}
     >
       <body className="flex flex-col overflow-x-hidden">
-        <Navbar />
-
-        <main className="">{children}</main>
-
-        <Demo />
+        <ClerkProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Demo />
+        </ClerkProvider>
       </body>
     </html>
   );
