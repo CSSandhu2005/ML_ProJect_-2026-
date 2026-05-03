@@ -1,9 +1,13 @@
 import React from 'react'
-
-const page = () => {
+import PlayGround from '@/components/PlayGround_'
+import { BackgroundComponent } from '@/components/gradient-background-4'
+const Dashboard = () => {
   return (
-    <div>DashBoard ✅</div>
+    <div>
+      <BackgroundComponent />
+      <PlayGround />
+    </div>
   )
 }
 
-export default page
+export default Dashboard
