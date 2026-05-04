@@ -561,7 +561,7 @@ export function APIPlayground({
                   <ChevronDown className="h-4 w-4 ml-2" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent> {/* Changes Have Been Made Here 05/04/2026 ; ["GET", "POST", "PUT", "PATCH", "DELETE"]*/}
                 {["GET", "POST", "PUT", "PATCH", "DELETE"].map((method) => (
                   <DropdownMenuItem
                     key={method}
@@ -578,7 +578,7 @@ export function APIPlayground({
               </DropdownMenuContent>
             </DropdownMenu>
             <Input
-              placeholder="Enter API URL or paste cURL command"
+              placeholder="Connect your device or select hardware module"
               value={config.url}
               onChange={(e) => updateConfig("url", e.target.value)}
               className="flex-1 h-10 bg-white/95 dark:bg-neutral-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-400 border border-gray-200 dark:border-gray-700 rounded-md px-3 focus:outline-none focus:ring-2 focus:ring-blue-400/25"

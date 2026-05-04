@@ -39,15 +39,16 @@ function useAutoResizeTextarea({ minHeight, maxHeight }: AutoResizeProps) {
       textarea.style.height = `${minHeight}px`; // reset first
       const newHeight = Math.max(
         minHeight,
-        Math.min(textarea.scrollHeight, maxHeight ?? Infinity)
+        Math.min(textarea.scrollHeight, maxHeight ?? Infinity),
       );
       textarea.style.height = `${newHeight}px`;
     },
-    [minHeight, maxHeight]
+    [minHeight, maxHeight],
   );
 
   useEffect(() => {
-    if (textareaRef.current) textareaRef.current.style.height = `${minHeight}px`;
+    if (textareaRef.current)
+      textareaRef.current.style.height = `${minHeight}px`;
   }, [minHeight]);
 
   return { textareaRef, adjustHeight };
@@ -73,10 +74,10 @@ export default function RuixenMoonChat() {
       <div className="flex-1 w-full flex flex-col items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-semibold text-white drop-shadow-sm">
-            Ruixen AI
+            SynKron AI
           </h1>
           <p className="mt-2 text-neutral-200">
-            Build something amazing — just start typing below.
+            Code meets hardware — build, control, and interact in real time.
           </p>
         </div>
       </div>
@@ -96,7 +97,7 @@ export default function RuixenMoonChat() {
               "w-full px-4 py-3 resize-none border-none",
               "bg-transparent text-white text-sm",
               "focus-visible:ring-0 focus-visible:ring-offset-0",
-              "placeholder:text-neutral-400 min-h-[48px]"
+              "placeholder:text-neutral-400 min-h-[48px]",
             )}
             style={{ overflow: "hidden" }}
           />
@@ -116,7 +117,7 @@ export default function RuixenMoonChat() {
                 disabled
                 className={cn(
                   "flex items-center gap-1 px-3 py-2 rounded-lg transition-colors",
-                  "bg-neutral-700 text-neutral-400 cursor-not-allowed"
+                  "bg-neutral-700 text-neutral-400 cursor-not-allowed",
                 )}
               >
                 <ArrowUpIcon className="w-4 h-4" />
@@ -128,14 +129,38 @@ export default function RuixenMoonChat() {
 
         {/* Quick Actions */}
         <div className="flex items-center justify-center flex-wrap gap-3 mt-6">
-          <QuickAction icon={<Code2 className="w-4 h-4" />} label="Generate Code" />
-          <QuickAction icon={<Rocket className="w-4 h-4" />} label="Launch App" />
-          <QuickAction icon={<Layers className="w-4 h-4" />} label="UI Components" />
-          <QuickAction icon={<Palette className="w-4 h-4" />} label="Theme Ideas" />
-          <QuickAction icon={<CircleUserRound className="w-4 h-4" />} label="User Dashboard" />
-          <QuickAction icon={<MonitorIcon className="w-4 h-4" />} label="Landing Page" />
-          <QuickAction icon={<FileUp className="w-4 h-4" />} label="Upload Docs" />
-          <QuickAction icon={<ImageIcon className="w-4 h-4" />} label="Image Assets" />
+          <QuickAction
+            icon={<Code2 className="w-4 h-4" />}
+            label="Generate Hardware Code"
+          />
+          <QuickAction
+            icon={<Rocket className="w-4 h-4" />}
+            label="Run on Device"
+          />
+          <QuickAction
+            icon={<Layers className="w-4 h-4" />}
+            label="Device Modules"
+          />
+          <QuickAction
+            icon={<Palette className="w-4 h-4" />}
+            label="Project Ideas"
+          />
+          <QuickAction
+            icon={<CircleUserRound className="w-4 h-4" />}
+            label="My Projects"
+          />
+          <QuickAction
+            icon={<MonitorIcon className="w-4 h-4" />}
+            label="Starter Projects"
+          />
+          <QuickAction
+            icon={<FileUp className="w-4 h-4" />}
+            label="Upload Code"
+          />
+          <QuickAction
+            icon={<ImageIcon className="w-4 h-4" />}
+            label="Hardware Assets"
+          />
         </div>
       </div>
     </div>

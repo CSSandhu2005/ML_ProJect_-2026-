@@ -27,12 +27,12 @@ const FixedDithering = Dithering as React.FC<FixedDitheringProps>;
 
 const releases = [
   {
-    title: "v3.0.0: Major UI Refresh & New Integrations",
+    title: "v3.0.0: Platform Refresh & Device Integrations",
     date: "May 15, 2025",
     image:
       "https://placehold.co/1200x700/141414/ffffff/png?text=UI+Refresh+%26+Integrations",
     excerpt:
-      "This major release introduces a redesigned interface for a more intuitive experience, plus integrations with leading third-party platforms.",
+      "This update introduces a smoother coding interface and deeper integrations with hardware modules and connected devices.",
     contributors: [
       "https://placehold.co/96x96/ff8844/fff?text=A5",
       "https://placehold.co/96x96/3399ff/fff?text=B6",
@@ -41,30 +41,38 @@ const releases = [
     ],
     content: (
       <div className="prose dark:prose-invert">
-        <h3>Refreshed User Interface</h3>
+        <h3>Improved Coding Interface</h3>
         <p>
-          A lighter, faster UI with improved accessibility and responsiveness.
+          A cleaner and faster environment for writing and testing code that
+          directly interacts with your hardware builds.
         </p>
         <ul>
-          <li>New typography and icon system</li>
-          <li>Reorganized navigation and controls</li>
-          <li>Configurable dashboard panels</li>
+          <li>Better code editor with real-time feedback</li>
+          <li>Simplified controls for device interaction</li>
+          <li>Customizable workspace for projects</li>
         </ul>
-        <h4>Enhanced Integrations</h4>
+
+        <h4>Expanded Device Integrations</h4>
         <p>
-          Seamless connections for Slack, Drive, and Trello to boost workflow
-          efficiency.
+          Connect and control multiple hardware modules seamlessly through the
+          platform.
         </p>
+        <ul>
+          <li>Support for new sensors and components</li>
+          <li>Real-time communication with devices</li>
+          <li>Improved stability for hardware connections</li>
+        </ul>
       </div>
     ),
   },
+
   {
-    title: "v2.9.5: Performance Boost & API Enhancements",
+    title: "v2.9.5: Performance Boost & Control Enhancements",
     date: "April 02, 2025",
     image:
       "https://placehold.co/1200x700/0f0f0f/ffffff/png?text=Performance+%26+API",
     excerpt:
-      "This release brings a performance overhaul and introduces new API endpoints for advanced analytics and automation.",
+      "This release improves system performance and introduces better control mechanisms for faster and more reliable hardware interaction.",
     contributors: [
       "https://placehold.co/96x96/ff5566/fff?text=E3",
       "https://placehold.co/96x96/33cc99/fff?text=F4",
@@ -74,23 +82,23 @@ const releases = [
     ],
     content: (
       <div className="prose dark:prose-invert">
-        <h3>Performance Overhaul</h3>
+        <h3>Faster System Performance</h3>
         <ul>
-          <li>Reduced load time by 35%</li>
-          <li>Improved caching and query batching</li>
-          <li>Faster image preloading</li>
+          <li>Reduced delay in code execution</li>
+          <li>Smoother real-time hardware response</li>
+          <li>Optimized data handling between system and devices</li>
         </ul>
-        <h4>API Enhancements</h4>
+
+        <h4>Enhanced Control System</h4>
         <ul>
-          <li>New analytics endpoints</li>
-          <li>Improved role-based permissions</li>
-          <li>Expanded webhooks for automation</li>
+          <li>More reliable device communication</li>
+          <li>Improved command execution flow</li>
+          <li>Better handling of multiple connected modules</li>
         </ul>
       </div>
     ),
   },
 ];
-
 export const ChangeLog = () => {
   return (
     <section className="relative w-full overflow-hidden mt-16">
@@ -120,7 +128,7 @@ export const ChangeLog = () => {
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2 text-sm font-medium text-white/80">
               <GitPullRequest className="size-4" />
-              <p>Changelog</p>
+              <p>Latest Builds & System Updates</p>
             </div>
             <h1 className="text-4xl font-semibold text-white leading-snug">
               Latest Enhancements

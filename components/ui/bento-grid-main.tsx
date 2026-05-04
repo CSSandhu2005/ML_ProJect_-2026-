@@ -34,8 +34,8 @@ const files = [
 const features = [
   {
     Icon: FileTextIcon,
-    name: "Save your files",
-    description: "We automatically save your files as you type.",
+    name: "Save your Builds",
+    description: "We automatically store your code and hardware setups as you create.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
@@ -69,8 +69,8 @@ const features = [
   },
   {
     Icon: BellIcon,
-    name: "Notifications",
-    description: "Get notified when something happens.",
+    name: "Live feedback",
+    description: "Get instant updates from your hardware as your code runs.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
@@ -80,8 +80,8 @@ const features = [
   },
   {
     Icon: Share2Icon,
-    name: "Integrations",
-    description: "Supports 100+ integrations and counting.",
+    name: "Device connections",
+    description: "Connect and control multiple hardware modules seamlessly.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
@@ -91,8 +91,8 @@ const features = [
   },
   {
     Icon: CalendarIcon,
-    name: "Calendar",
-    description: "Use the calendar to filter your files by date.",
+    name: "Project timeline",
+    description: "Track your builds and progress over time.",
     className: "col-span-3 lg:col-span-1",
     href: "#",
     cta: "Learn more",

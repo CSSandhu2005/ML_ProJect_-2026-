@@ -194,7 +194,7 @@ export function SessionNavBar() {
                       <motion.li variants={variants}>
                         {!isCollapsed && (
                           <div className="flex items-center gap-2">
-                            <p className="ml-2 text-sm font-medium">Reports</p>
+                            <p className="ml-2 text-sm font-medium">Build Logs</p>
                           </div>
                         )}
                       </motion.li>
@@ -235,7 +235,7 @@ export function SessionNavBar() {
                       <Layout className="h-4 w-4" />{" "}
                       <motion.li variants={variants}>
                         {!isCollapsed && (
-                          <p className="ml-2 text-sm font-medium">Deals</p>
+                          <p className="ml-2 text-sm font-medium">Device ProJects</p>
                         )}
                       </motion.li>
                     </Link>
@@ -251,7 +251,7 @@ export function SessionNavBar() {
                       <UserCircle className="h-4 w-4" />{" "}
                       <motion.li variants={variants}>
                         {!isCollapsed && (
-                          <p className="ml-2 text-sm font-medium">Accounts</p>
+                          <p className="ml-2 text-sm font-medium">Connected Devices</p>
                         )}
                       </motion.li>
                     </Link>
@@ -268,7 +268,7 @@ export function SessionNavBar() {
                       <motion.li variants={variants}>
                         {!isCollapsed && (
                           <p className="ml-2 text-sm font-medium">
-                            Competitors
+                            Device Explorer 
                           </p>
                         )}
                       </motion.li>
@@ -287,7 +287,7 @@ export function SessionNavBar() {
                       <motion.li variants={variants}>
                         {!isCollapsed && (
                           <p className="ml-2 text-sm font-medium">
-                            Knowledge Base
+                            Learning Hub
                           </p>
                         )}
                       </motion.li>
@@ -320,7 +320,7 @@ export function SessionNavBar() {
                       <motion.li variants={variants}>
                         {!isCollapsed && (
                           <p className="ml-2 text-sm font-medium">
-                            Document Review
+                            Code Review
                           </p>
                         )}
                       </motion.li>

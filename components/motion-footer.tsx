@@ -211,11 +211,11 @@ MagneticButton.displayName = "MagneticButton";
 // -------------------------------------------------------------------------
 const MarqueeItem = () => (
   <div className="flex items-center space-x-12 px-6">
-    <span>Accountability Redefined</span> <span className="text-primary/60">✦</span>
-    <span>Transparent Tracking</span> <span className="text-secondary/60">✦</span>
-    <span>12-Step Progress</span> <span className="text-primary/60">✦</span>
-    <span>Sponsor Connection</span> <span className="text-secondary/60">✦</span>
-    <span>Absolute Privacy</span> <span className="text-primary/60">✦</span>
+    <span>Build Hardware</span> <span className="text-primary/60">✦</span>
+    <span>Write Code</span> <span className="text-secondary/60">✦</span>
+    <span>Real-Time Control</span> <span className="text-primary/60">✦</span>
+    <span>Live Feedback</span> <span className="text-secondary/60">✦</span>
+    <span>Device Sync</span> <span className="text-primary/60">✦</span>
   </div>
 );
 
@@ -301,7 +301,7 @@ export function CinematicFooter() {
             ref={giantTextRef}
             className="footer-giant-bg-text absolute -bottom-[5vh] left-1/2 -translate-x-1/2 whitespace-nowrap z-0 pointer-events-none select-none"
           >
-            SOBERS
+            CODING
           </div>
 
           {/* 1. Diagonal Sleek Marquee (Top of footer) */}
@@ -360,7 +360,7 @@ export function CinematicFooter() {
             
             {/* Copyright */}
             <div className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 md:order-1">
-              © 2026 Volvox. All rights reserved.
+              © 2026 Chiranjeev. All rights reserved.
             </div>
 
             {/* "Made with Love" Badge */}
@@ -368,7 +368,7 @@ export function CinematicFooter() {
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">Crafted with</span>
               <span className="animate-footer-heartbeat text-sm md:text-base text-destructive">❤</span>
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">by</span>
-              <span className="text-foreground font-black text-xs md:text-sm tracking-normal ml-1">Volvox</span>
+              <span className="text-foreground font-black text-xs md:text-sm tracking-normal ml-1">Chiranjeev</span>
             </div>
 
             {/* Back to top */}

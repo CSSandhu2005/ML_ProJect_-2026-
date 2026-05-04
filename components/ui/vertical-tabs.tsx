@@ -10,29 +10,29 @@ import { HugeiconsIcon } from "@hugeicons/react";
 const SERVICES = [
   {
     id: "01",
-    title: "Web Design",
+    title: "Hardware Building",
     description:
-      "Creating beautiful, functional, and user-centric digital experiences.",
+      "Assemble and connect physical components to create interactive systems.",
     image:
       "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200",
   },
   {
     id: "02",
-    title: "Framer Development",
-    description: "Building high-performance, animated websites with Framer.",
+    title: "Code & Control",
+    description:
+      "Write code that directly controls and interacts with your hardware projects.",
     image:
       "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1200",
   },
   {
     id: "03",
-    title: "Branding",
+    title: "Real-Time Interaction",
     description:
-      "Defining your brand's visual identity and voice for a lasting impression.",
+      "See instant feedback and behavior changes as your hardware responds to code.",
     image:
       "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200",
   },
 ];
-
 const AUTO_PLAY_DURATION = 5000;
 
 export function VerticalTabs() {

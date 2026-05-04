@@ -90,16 +90,16 @@ export default function Dashboard() {
           <div className="flex flex-nowrap flex-row items-center justify-between w-full mb-8">
             <div>
               <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-                API Playground
+                Code Playground
               </h1>
               <p className="text-gray-600 dark:text-gray-100">
-                Test and configure APIs with a clean, powerful interface
+                Write code and connect it to your hardware in real time
               </p>
             </div>
             <Button
               variant="outline"
               onClick={() =>
-                window.open("https://github.com/nparashar150/21st", "_blank")
+                window.open("https://github.com/CSSandhu2005/ML_ProJect_-2026-", "_blank")
               }
               className="flex items-center gap-2"
             >

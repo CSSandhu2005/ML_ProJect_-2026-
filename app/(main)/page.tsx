@@ -28,7 +28,7 @@ export default function Home() {
 
       <div>
         <CursorDrivenParticleTypography
-          text="ROBOTICS"
+          text="Build. Code. Control."
           fontSize={160}
           particleDensity={5}
           dispersionStrength={20}

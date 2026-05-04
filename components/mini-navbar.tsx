@@ -72,9 +72,9 @@ export function Navbar() {
   );
 
   const navLinksData = [
-    { label: "Manifesto", href: "#1" },
-    { label: "Careers", href: "#2" },
-    { label: "Discover", href: "#3" },
+    { label: "Build", href: "#1" },
+    { label: "Learn", href: "#2" },
+    { label: "Explore", href: "#3" },
   ];
 
   const loginButtonElement = (

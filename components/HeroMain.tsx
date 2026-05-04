@@ -7,13 +7,13 @@ export default function HeroMain() {
       <div className="pointer-events-none z-10 text-center absolute">
         <h1 className="font-semibold text-7xl whitespace-pre-wrap">
           <span className="italic text-6xl font-thin">
-            Designs That Speak <br />{" "}
+            Build Systems That Think <br />{" "}
           </span>
-          Louder Than Words
+          Code Hardware Into Life
         </h1>
         <p className="text-sm text-white/60">
-          We craft stunning visuals and user - friendly experiences that <br />{" "}
-          help your brand stand out and connect with your audience.
+          Empower kids to assemble hardware and program it seamlessly—turning ideas <br/>
+          into real-world interactive systems.
         </p>
       </div>
     </div>
