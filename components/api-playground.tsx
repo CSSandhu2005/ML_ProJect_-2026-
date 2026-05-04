@@ -501,7 +501,7 @@ export function APIPlayground({
         <div className="h-full">
           <ResizablePanelGroup direction="vertical" className="gap-4">
             {/* Configuration JSON - Top Half */}
-            <ResizablePanel defaultSize={50} minSize={30}>
+            <ResizablePanel defaultSize={35} minSize={30}>
               <div className="h-full bg-white dark:bg-neutral-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/40">
                 <div className="p-4 h-full flex flex-col">
                   <h3 className="text-sm font-semibold mb-3 text-gray-700 dark:text-gray-200 border-b border-gray-100 dark:border-gray-800 pb-2">
