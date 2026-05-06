@@ -1,5 +1,5 @@
 "use client";
-
+import Editor from "@monaco-editor/react";
 import React, { useState, useEffect, useCallback } from "react";
 import { ChevronDown, Plus, Trash2, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -495,46 +495,84 @@ export function APIPlayground({
       direction="horizontal"
       className="h-full gap-4 bg-white dark:bg-neutral-950"
     >
-      
       {/* Right side - JSON preview */}
       <ResizablePanel defaultSize={34} minSize={25}>
         <div className="h-full">
           <ResizablePanelGroup direction="vertical" className="gap-4">
-            {/* Configuration JSON - Top Half */}
+            {/* Editable Configuration - Top Half */}
+            {/* Configuration Editor - Top Half */}
             <ResizablePanel defaultSize={35} minSize={30}>
-              <div className="h-full bg-white dark:bg-neutral-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/40">
-                <div className="p-4 h-full flex flex-col">
-                  <h3 className="text-sm font-semibold mb-3 text-gray-700 dark:text-gray-200 border-b border-gray-100 dark:border-gray-800 pb-2">
-                    Configuration JSON
+              <div className="h-full bg-white dark:bg-neutral-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/40 overflow-hidden flex flex-col">
+                <div className="p-4 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                  <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-200">
+                    Code Editor
                   </h3>
-                  <pre className="text-xs overflow-auto flex-1 bg-gray-50 dark:bg-neutral-950/50 rounded-lg p-4 text-gray-800 dark:text-gray-100 font-mono">
-                    {JSON.stringify(getCleanConfig(), null, 2)}
-                  </pre>
+                </div>
+
+                <div className="flex-1">
+                  <Editor
+                    height="100%"
+                    defaultLanguage="json"
+                    theme="vs-dark"
+                    value={JSON.stringify(getCleanConfig(), null, 2)}
+                    // Added type string | undefined to fix the 'any' error
+                    onChange={(value: string | undefined) => {
+                      // 1. Safety check for the function and the value
+                      if (onConfigChange && value) {
+                        try {
+                          // 2. Parse the string into a JSON object
+                          const parsedConfig = JSON.parse(value);
+
+                          // 3. Pass the object (not the string) to the function
+                          onConfigChange(parsedConfig);
+                        } catch (e) {
+                          // 4. While the user is typing, the JSON will be invalid.
+                          // We catch the error so the app doesn't crash.
+                          console.debug("User is still typing valid JSON...");
+                        }
+                      }
+                    }}
+                    options={{
+                      minimap: { enabled: false },
+                      fontSize: 12,
+                      scrollBeyondLastLine: false,
+                      automaticLayout: true,
+                      padding: { top: 16 },
+                    }}
+                  />
                 </div>
               </div>
             </ResizablePanel>
 
-            {/* Response JSON - Bottom Half */}
+            {/* Response JSON - Bottom Half (Keep as Read-Only) */}
             {config.rawResponse && (
               <>
                 <ResizableHandle withHandle />
                 <ResizablePanel defaultSize={50} minSize={30}>
-                  <div className="h-full bg-white dark:bg-gradient-to-br dark:bg-neutral-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/40">
-                    <div className="p-4 h-full flex flex-col">
-                      <h3 className="text-sm font-semibold mb-3 text-gray-700 dark:text-gray-200 border-b border-gray-100 dark:border-gray-800 pb-2">
-                        Response JSON
+                  <div className="h-full bg-white dark:bg-neutral-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/40 flex flex-col overflow-hidden">
+                    <div className="p-4 border-b border-gray-100 dark:border-gray-800">
+                      <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-200">
+                        Response Output
                       </h3>
-                      <pre className="text-xs overflow-auto flex-1 bg-gray-50 dark:bg-neutral-950/50 rounded-lg p-4 font-mono">
-                        {config.rawResponse.error ? (
-                          <span className="text-red-700 dark:text-red-300 font-medium">
-                            {config.rawResponse.error}
-                          </span>
-                        ) : (
-                          <span className="text-gray-800 dark:text-gray-100">
-                            {JSON.stringify(config.rawResponse.data, null, 2)}
-                          </span>
-                        )}
-                      </pre>
+                    </div>
+                    <div className="flex-1">
+                      <Editor
+                        height="100%"
+                        defaultLanguage="json"
+                        theme="vs-dark"
+                        value={
+                          config.rawResponse.error
+                            ? config.rawResponse.error
+                            : JSON.stringify(config.rawResponse.data, null, 2)
+                        }
+                        options={{
+                          readOnly: true,
+                          minimap: { enabled: false },
+                          fontSize: 12,
+                          automaticLayout: true,
+                          padding: { top: 16 },
+                        }}
+                      />
                     </div>
                   </div>
                 </ResizablePanel>
@@ -543,9 +581,7 @@ export function APIPlayground({
           </ResizablePanelGroup>
         </div>
       </ResizablePanel>
-
       <ResizableHandle withHandle />
-      
       {/* Left side - Configuration */}
       <ResizablePanel defaultSize={66} minSize={50}>
         <div className="flex flex-col gap-4 h-full p-6 bg-white dark:bg-neutral-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700/40">
@@ -561,7 +597,9 @@ export function APIPlayground({
                   <ChevronDown className="h-4 w-4 ml-2" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent> {/* Changes Have Been Made Here 05/04/2026 ; ["GET", "POST", "PUT", "PATCH", "DELETE"]*/}
+              <DropdownMenuContent>
+                {" "}
+                {/* Changes Have Been Made Here 05/04/2026 ; ["GET", "POST", "PUT", "PATCH", "DELETE"]*/}
                 {["GET", "POST", "PUT", "PATCH", "DELETE"].map((method) => (
                   <DropdownMenuItem
                     key={method}
@@ -776,12 +814,11 @@ export function APIPlayground({
               size="sm"
               className="h-10 px-6"
             >
-              {loading ? "Testing..." : "Test API"}
+              {loading ? "Testing..." : "Send Code"}
             </Button>
           </div>
         </div>
       </ResizablePanel>
-
     </ResizablePanelGroup>
   );
 }
